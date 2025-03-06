@@ -1,0 +1,460 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>FlashVideo</title>
+    <link href="./Vanilla_files/style.css" rel="stylesheet">
+    <script type="text/javascript" src="./Vanilla_files/jquery.mlens-1.0.min.js"></script>
+    <script type="text/javascript" src="./Vanilla_files/jquery.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <h1>
+            <img src="./static/images/logo.png" alt=""
+                style="width: 350px; height: 130px; vertical-align: middle; margin-right: 0px; position: relative; top: 25px;">
+            <br> <strong>Flowing Fidelity to Detail for Efficient High-Resolution Video Generation</strong> <br>
+        </h1>
+
+
+
+
+        <br>
+        <img src="./static/images/methodv3.png" class="teaser-gif" style="width:95%;"><br>
+
+
+        <!-- <h3 style="text-align:center"> -->
+        <h2 style="text-align:left">
+            </h3>
+            <em><b> (a) Dividing the process into prompt fidelity and quality enhancement stages, delivering a stunning
+                    reduction in DiT's computational load .
+
+                    <br>
+                    (b) Enableing users to preview the initial output and accordingly adjust the prompt before
+                    committing to full-resolution generation, thereby significantly reducing wait times and enhancing
+                    commercial viability. </b>
+            </em>
+        </h2>
+
+        <font size="+2">
+            <p style="text-align: center;">
+                <a href="https://github.com/Anonymous-Researcher1/FlashVideo" target="_blank">[Code]</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+            </p>
+        </font>
+    </div>
+    <div class="content">
+        <h2 style="text-align:center;">Abstract</h2>
+        <p> This work presents <b>FlashVideo</b>, a practical tool with which users can easily personalize their own
+            photos on the fly by providing one or a few reference face images and a text prompt. Our approach is
+            distinguishable from
+            DiT diffusion models have achieved great success in text-to-video generation, leveraging their scalability
+            in model capacity and data scale.
+            High content and motion fidelity aligned with text prompts, however, often require large model parameters
+            and a substantial number of function
+            evaluations (NFEs). Realistic and visually appealing details are typically reflected in high-resolution
+            outputs, further amplifying computational
+            demands—especially for single-stage DiT models. To address these challenges, we propose a novel two-stage
+            framework, <b>FlashVideo</b>,
+            which strategically allocates model capacity and NFEs across stages to balance generation fidelity and
+            quality. In the first stage,
+            fidelity is prioritized through a low-resolution process utilizing large parameters and sufficient NFEs to
+            enhance computational efficiency.
+            The second stage establishes flow matching between low and high resolutions, effectively generating fine
+            details with minimal NFEs.
+            Quantitative and visual results demonstrate that <b>FlashVideo</b> achieves state-of-the-art high-resolution
+            video generation with
+            superior computational efficiency.
+        </p>
+    </div>
+
+
+
+
+
+    <div class="content">
+        <h2 style="text-align:center;">Visualization Results</h2>
+        <p>
+            <!-- <h3>FlashVideo initially generates a 270P video based on user prompts and subsequently enhances the video to 1080P.</h3> -->
+        </p>
+        <!-- <div class="image-row" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)); gap: 10px;"> -->
+
+        <div style="text-align:center">
+            <br>
+            <div style="text-align: center;"> <!-- This div will center the image -->
+                <img src="./static/images/time.png" alt="time" style="width:600px;height:180px;">
+            </div>
+            <br />
+        </div>
+
+        <br>
+
+
+
+        <!--6-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            Fluffy llama with round glasses in a cozy cafe with warm lighting, working on laptop, amidst large-eyed
+            expressions.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/5.jpg">
+            <source src="./static/githubfigs/270_1080/5.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <br />
+
+
+        <!--0-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            Giant woolly mammoths roam a snowy meadow with snow-covered trees and mountains, bathed in warm
+            mid-afternoon light, captured at a low angle.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/0_0.jpg">
+            <source src="./static/githubfigs/270_1080/0_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+        <!--13-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            Drone captures historic church, people, and tiered pathways on Amalfi Coast with intricate architecture,
+            hilly landscapes and stunning ocean vistas under afternoon glow.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/11_0.jpg">
+            <source src="./static/githubfigs/270_1080/11_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+
+        <!--10-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            Stylish woman in chic attire casually walks on vibrant, neon-lit Tokyo street, its glistening dampness
+            reflects city's colorful lights and pedestrians.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/8_0.jpg">
+            <source src="./static/githubfigs/270_1080/8_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!--27-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            A sleek cat with bright eyes peers curiously from a cozy spot, attentively scanning surroundings, captured
+            in warm lighting from a side angle, highlighting its inquisitive expression
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/26_0.jpg">
+            <source src="./static/githubfigs/270_1080/26_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!--24-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+
+            An extreme close-up captures a thoughtful, well-dressed elder man's subtle revelation at a Parisian café,
+            with warm cinematic lighting and softly blurred Paris streets enhancing the scene's depth.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/22_0.jpg">
+            <source src="./static/githubfigs/270_1080/22_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!--1-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            A quaint village in a serene valley with cherry blossoms, villagers in traditional attire engage in daily
+            activities, captured dynamically.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/0_1.jpg">
+            <source src="./static/githubfigs/270_1080/0_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!--27-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            A vibrant tabby cat dashes through a lush garden, its gleaming eyes alight with excitement. Captured from a
+            ground-level angle under warm cinematic tones.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/27_0.jpg">
+            <source src="./static/githubfigs/270_1080/27_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+        <!--20-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            A striking figure rides a massive tortoise through a sunlit desert of glass sand, captured in a
+            wide-to-close shot emphasizing their determination and the landscape's glistening beauty.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/18_0.jpg">
+            <source src="./static/githubfigs/270_1080/18_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+
+        <!--2-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            Young woman in teal dress walks gracefully in green forest with vibrant foliage, sunlight filtering through
+            leaves, among blooming wildflowers.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/1_0.jpg">
+            <source src="./static/githubfigs/270_1080/1_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+
+
+        <!--3-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            Vincent van Gogh, with red hair and intense gaze, in a sunlit, paint-splattered room, amidst canvases,
+            vibrant paints, and a sunflower canvas. </p>
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/1.jpg">
+            <source src="./static/githubfigs/270_1080/1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <br />
+
+        <!--4-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            Man in Santa hat and red scarf smiles, conversing with tiger before laptop, against richly-textured brick
+            fireplace backdrop, camera smoothly glides.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/2_0.jpg">
+            <source src="./static/githubfigs/270_1080/2_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!--5-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            Majestic giraffe in vast Savannah, reaching for lush acacia leaves, captured with camera panning over golden
+            grass and sand-colored coat. </p>
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/3.jpg">
+            <source src="./static/githubfigs/270_1080/3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <br />
+
+
+
+        <!--7-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            Low-angle view of a confident lion with golden mane on a rocky outcrop, under warm sky glow, captured with a
+            subtle camera pan.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/4.jpg">
+            <source src="./static/githubfigs/270_1080/4.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <br />
+
+
+
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            Beautiful princess in flowing gown on majestic horse by a gently flowing river, camera captures her serene
+            expression and poised demeanor.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/7.jpg">
+            <source src="./static/githubfigs/270_1080/7.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!--11-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            Charming, chubby red panda with soft fur, sniffing and nibbling pizza with dexterous paws on a wooden
+            platform amidst lush foliage.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/9_0.jpg">
+            <source src="./static/githubfigs/270_1080/9_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+
+
+
+
+        <!--14-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            A bejeweled crab elegantly strolls along the beach, dropping gems and jewels intermittently, its trail
+            captured against the contrasting, sandy backdrop.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/12_0.jpg">
+            <source src="./static/githubfigs/270_1080/12_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+
+        <!--15-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            A sparkling waterfall cascades into a clear pool within a vibrant, tranquil forest clearing, enhanced by
+            colorful flora and small birds, captured in a gentle camera sweep.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/13_0.jpg">
+            <source src="./static/githubfigs/270_1080/13_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+        <!--16-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            An adorable kitten in a pirate costume confidently rides a robot vacuum around the house, its curious
+            expression and mischievous antics warmly illuminated.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/14_0.jpg">
+            <source src="./static/githubfigs/270_1080/14_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+        <!--17-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            A serene lakeside cabin and classic wooden rowboat sit peacefully amongst greenery, with the camera
+            capturing their gentle interaction with the tranquil water.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/15_0.jpg">
+            <source src="./static/githubfigs/270_1080/15_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!--18-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            A relaxed cow, wearing sunglasses and a hat, lounges beneath a palm tree on a beach.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/16_0.jpg">
+            <source src="./static/githubfigs/270_1080/16_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+        <!--19-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            A delightfully armored hedgehog rides a toy horse in a medieval castle.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/17_0.jpg">
+            <source src="./static/githubfigs/270_1080/17_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+        <!--21-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            A camera glide reveals an ancient, intricately-carved fountain nestled in a vibrant garden, its soft
+            cascades whispering secrets amidst sunlight-dappled flora.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/19_0.jpg">
+            <source src="./static/githubfigs/270_1080/19_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!--22-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            A first-person journey through frost-lined Manhattan streets elegantly reveals a frost-encased Empire State
+            Building, embodying the haunting, wintry beauty of the city.
+
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/20_0.jpg">
+            <source src="./static/githubfigs/270_1080/20_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+        <!--23-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+
+            A fluffy llama engagingly reads a picture book in a cozy nook surrounded by pillows and soft lighting.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/21_0.jpg">
+            <source src="./static/githubfigs/270_1080/21_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+
+        <!--25-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            A sweeping aerial shot of a steam train traversing Scotland's Glenfinnan Viaduct, surrounded by lush
+            landscapes and rugged mountains, with tracking camera enhances its majestic beauty.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/23_0.jpg">
+            <source src="./static/githubfigs/270_1080/23_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+        <!--26-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            An intellectual-looking rabbit, with glasses and a newspaper, sits on a quaint chair, highlighting its
+            engrossed, attentive reading posture.
+        </p>
+        <video id="video1" width="960" height="270" controls poster="./static/githubfigs/270_1080/25_0.jpg">
+            <source src="./static/githubfigs/270_1080/25_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+
+
+
+
+        <br />
+    </div>
+    </div>
+
+
+
+
+    <br />
+    </div>
+    </div>
+
+
+
+
+
+
+
+    <br />
+    </div>
+    </div>
+
+
+
+    </div>
+
+
+    <div class="content" id="acknowledgements">
+        <p><strong>Acknowledgements</strong>: We thank <a href="https://dreambooth.github.io">DreamBooth</a> for
+            providing the page templates.
+
+        </p>
+    </div>
+</body>
+
+</html>
