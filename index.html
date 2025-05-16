@@ -15,12 +15,70 @@
                 style="width: 350px; height: 130px; vertical-align: middle; margin-right: 0px; position: relative; top: 25px;">
             <br> <strong>Flowing Fidelity to Detail for Efficient High-Resolution Video Generation</strong> <br>
         </h1>
+        <style>
+            .toc-list {
+                text-align: left;
+                margin: 32px 0 32px 0;
+                padding: 28px 0 28px 0;
+                /* 左右padding去掉或减小 */
+                background: #ffffff;
+                border-radius: 16px;
+                width: 100%;
+                /* 占满整行 */
+                box-sizing: border-box;
+                /* 确保padding不溢出 */
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                font-size: 1.5em !important;
+                font-weight: 700;
+            }
 
+            .toc-list ul {
+                list-style-type: disc;
+                padding-left: 32px;
+                margin: 0;
+            }
+
+            .toc-list li {
+                margin: 20px 0;
+            }
+
+            .toc-list a {
+                color: #8e593d;
+                text-decoration: none;
+                transition: color 0.2s;
+                padding: 2px 8px;
+                border-radius: 6px;
+                font-size: 1.2em !important;
+                line-height: 1.2;
+            }
+
+            .toc-list a:hover {
+                background: #ffe5d0;
+                color: #c0baba;
+                text-decoration: underline;
+            }
+
+            -->
+        </style>
+        <!-- 放在 <h1> 后面 -->
+        <nav class="toc-list">
+            <ul>
+                <li><a href="#abstract">Abstract</a></li>
+                <li><a href="#visualization">⚡Visualization Results</a></li>
+                <li><a href="#comparison">General VSR Methods😭 vs. Our Tailored Stage-II😊</a></li>
+                <li><a href="https://github.com/Anonymous-Researcher1/FlashVideo" target="_blank">🤗Code🤗</a></li>
+            </ul>
+        </nav>
 
 
 
         <br>
         <img src="./static/images/methodv3.png" class="teaser-gif" style="width:95%;"><br>
+
+
+
+
+
 
 
         <!-- <h3 style="text-align:center"> -->
@@ -36,15 +94,15 @@
             </em>
         </h2>
 
-        <font size="+2">
+        <!-- <font size="+2">
             <p style="text-align: center;">
                 <a href="https://github.com/Anonymous-Researcher1/FlashVideo" target="_blank">[Code]</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
             </p>
-        </font>
+        </font> -->
     </div>
     <div class="content">
-        <h2 style="text-align:center;">Abstract</h2>
+        <h2 id="abstract" style="text-align:center;">Abstract</h2>
         <p> This work presents <b>FlashVideo</b>, a practical tool with which users can easily personalize their own
             photos on the fly by providing one or a few reference face images and a text prompt. Our approach is
             distinguishable from
@@ -73,7 +131,7 @@
 
 
     <div class="content">
-        <h2 style="text-align:center;">Visualization Results</h2>
+        <h2 id="visualization" style="text-align:center;">Visualization Results</h2>
         <p>
             <!-- <h3>FlashVideo initially generates a 270P video based on user prompts and subsequently enhances the video to 1080P.</h3> -->
         </p>
@@ -235,7 +293,7 @@
         </video>
 
         <!--5-->
-        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+        <!-- <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
             </strong> <br>
             Majestic giraffe in vast Savannah, reaching for lush acacia leaves, captured with camera panning over golden
             grass and sand-colored coat. </p>
@@ -244,7 +302,7 @@
             <source src="./static/githubfigs/270_1080/3.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-        <br />
+        <br /> -->
 
 
 
@@ -418,43 +476,63 @@
             <source src="./static/githubfigs/270_1080/25_0.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-
-
-
-
-
         <br />
     </div>
+
+
+    <div class="content">
+        <h2 id="comparison" style="text-align:center;">General Methods vs. Our Tailored Stage-II</h2>
+
+        <!--6-->
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            Majestic giraffe in vast Savannah, reaching for lush acacia leaves, captured with camera panning over
+            golden grass and
+            sand-colored coat.
+        </p>
+        <video id="video1" width="960" height="900" controls poster="./static/githubfigs/method_cmp/merged_2.jpg">
+            <source src="./static/githubfigs/method_cmp/merged_2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <br />
+
+
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+            A young woman in a red hat and light blue summer dress sits serenely on a park bench amid blooming flowers,
+            tracing her
+            book as sunlight filters through green leaves.
+            sand-colored coat.
+        </p>
+        <video id="video1" width="960" height="900" controls poster="./static/githubfigs/method_cmp/merged_0.jpg">
+            <source src="./static/githubfigs/method_cmp/merged_0.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <br />
+
+        <p style="color: #E16724; font-size: 1.1em; text-align: center;"> <strong> Brief Summary of Text Prompt:
+            </strong> <br>
+
+            Vincent van Gogh, with red hair and intense gaze, in a sunlit, paint-splattered room, amidst canvases,
+            vibrant paints, and a sunflower canvas.
+        </p>
+        <video id="video1" width="960" height="900" controls poster="./static/githubfigs/method_cmp/merged_3.jpg">
+            <source src="./static/githubfigs/method_cmp/merged_3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <br />
+
+
+
     </div>
-
-
-
-
-    <br />
-    </div>
-    </div>
-
-
-
-
-
-
-
-    <br />
-    </div>
-    </div>
-
-
-
-    </div>
-
-
     <div class="content" id="acknowledgements">
         <p><strong>Acknowledgements</strong>: We thank <a href="https://dreambooth.github.io">DreamBooth</a> for
             providing the page templates.
 
         </p>
     </div>
+
+
 </body>
 
 </html>
