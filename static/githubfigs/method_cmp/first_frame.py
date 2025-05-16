@@ -1,7 +1,7 @@
 import cv2
 import os
 
-video_dir = './'
+video_dir = '/Users/bytedance/Desktop/merge/merge2/'
 
 for filename in os.listdir(video_dir):
     if filename.endswith('.mp4'):
